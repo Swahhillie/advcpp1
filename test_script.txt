@@ -1,0 +1,31 @@
+bind verbose main verbose
+verbose 1
+bind menu main menu
+bind create_menu main create_menu
+bind remove_menu main remove_menu
+bind commands main list_available_commands
+bind menus main list_available_menus
+create_menu extra
+bind save extra save
+bind load extra load
+bind menu extra menu
+commands
+menus
+menu main
+commands
+menus
+create_menu some_other_menu
+menus
+remove_menu some_other_menu
+menus
+menu some_other_menu
+bind cd main menu
+bind dir main list_available_menus
+menu extra
+save test_script_config.txt
+load test_script_config.txt
+bind echo extra echo
+menu main
+bind echo extra echo
+menu extra
+echo you are a wonderful person

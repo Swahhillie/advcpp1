@@ -1,0 +1,106 @@
+created menu "main"
+in menu "main"
+bound function bind to command bind in menu main
+bound function verbose to command verbose in menu main
+verbose on
+execute(bind, menu, main, menu)
+bound function menu to command menu in menu main
+execute(bind, create_menu, main, create_menu)
+bound function create_menu to command create_menu in menu main
+execute(bind, remove_menu, main, remove_menu)
+bound function remove_menu to command remove_menu in menu main
+execute(bind, commands, main, list_available_commands)
+bound function list_available_commands to command commands in menu main
+execute(bind, menus, main, list_available_menus)
+bound function list_available_menus to command menus in menu main
+execute(create_menu, extra)
+created menu "extra"
+execute(bind, save, extra, save)
+bound function save to command save in menu extra
+execute(bind, load, extra, load)
+bound function load to command load in menu extra
+execute(bind, menu, extra, menu)
+bound function menu to command menu in menu extra
+execute(commands)
+bind -> bind
+commands -> list_available_commands
+create_menu -> create_menu
+menu -> menu
+menus -> list_available_menus
+remove_menu -> remove_menu
+verbose -> verbose
+execute(menus)
+extra
+main
+execute(menu, main)
+in menu "main"
+execute(commands)
+bind -> bind
+commands -> list_available_commands
+create_menu -> create_menu
+menu -> menu
+menus -> list_available_menus
+remove_menu -> remove_menu
+verbose -> verbose
+execute(menus)
+extra
+main
+execute(create_menu, some_other_menu)
+created menu "some_other_menu"
+execute(menus)
+extra
+main
+some_other_menu
+execute(remove_menu, some_other_menu)
+removed menu "some_other_menu"
+execute(menus)
+extra
+main
+execute(menu, some_other_menu)
+no menu "some_other_menu"
+execute(bind, cd, main, menu)
+bound function menu to command cd in menu main
+execute(bind, dir, main, list_available_menus)
+bound function list_available_menus to command dir in menu main
+execute(menu, extra)
+in menu "extra"
+execute(save, test_script_config.txt)
+saving binds to file test_script_config.txt
+save file{
+extra load load
+extra menu menu
+extra save save
+main bind bind
+main cd menu
+main commands list_available_commands
+main create_menu create_menu
+main dir list_available_menus
+main menu menu
+main menus list_available_menus
+main remove_menu remove_menu
+main verbose verbose
+}
+execute(load, test_script_config.txt)
+loading binds from file test_script_config.txt
+bound function load to command load in menu extra
+bound function menu to command menu in menu extra
+bound function save to command save in menu extra
+bound function bind to command bind in menu main
+bound function menu to command cd in menu main
+bound function list_available_commands to command commands in menu main
+bound function create_menu to command create_menu in menu main
+bound function list_available_menus to command dir in menu main
+bound function menu to command menu in menu main
+bound function list_available_menus to command menus in menu main
+bound function remove_menu to command remove_menu in menu main
+bound function verbose to command verbose in menu main
+execute(bind, echo, extra, echo)
+no function for command bind
+execute(menu, main)
+in menu "main"
+execute(bind, echo, extra, echo)
+bound function echo to command echo in menu extra
+execute(menu, extra)
+in menu "extra"
+execute(echo, you, are, a, wonderful, person)
+you are a wonderful person 
